@@ -5,4 +5,4 @@ Note about radio it has USA radio streams
 this came from the radio browser service database radio browser database. it has WGTS Bright FM and more. I am willing to share the app since I have been testing it for weeks. 
 please DO NOT Copy the app. broadcasters:
 if you want this app removed contact at midnightstudio100@gmail.com thank you.
-
+note: does not contain viruses its safe to install on phones but you do it at your own risk. it has background play support
