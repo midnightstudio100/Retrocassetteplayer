@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Retro Cassette Radio</string>
+    <string name="tagline">USA Christian Radio • Tap a station, press play</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="stopped">Stopped</string>
+    <string name="buffering">Buffering…</string>
+    <string name="choose_station">Choose a station</string>
+</resources>

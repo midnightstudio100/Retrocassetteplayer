@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_scroll"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/gx_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:paddingBottom="120dp">
+
+        <!-- GX-880 header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/gx_panel"
+            android:padding="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="● "
+                    android:textColor="@color/gx_gold"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="RETRO RADIO GX-880"
+                    android:textColor="@color/gx_text"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="HIGH-FIDELITY CASSETTE DECK &amp; INTERNET RADIO"
+                android:textColor="@color/gx_muted"
+                android:textSize="11sp"
+                android:layout_marginTop="2dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/btn_tab_tapes"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="TAPES"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text" />
+
+                <Button
+                    android:id="@+id/btn_tab_radio"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="RADIO"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TAPES = your local music  •  RADIO = stations"
+                android:textColor="@color/gx_muted"
+                android:textSize="11sp"
+                android:gravity="center"
+                android:layout_marginTop="6dp" />
+        </LinearLayout>
+
+        <!-- Large cassette window -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/gx_panel2"
+            android:padding="12dp"
+            android:layout_marginTop="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="SIDE A  •  CrO2 CHROME (Type II)  •  EQ 70µs"
+                    android:textColor="@color/gx_muted"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DOLBY SYSTEM"
+                    android:textColor="@color/gx_cyan"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/gx_label"
+                android:padding="12dp"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/station_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Choose a station"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/cassette_dark"
+                    android:gravity="center" />
+
+                <TextView
+                    android:id="@+id/station_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="USA Christian radio"
+                    android:textSize="13sp"
+                    android:textColor="@color/cassette_brown"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="10dp">
+
+                <ImageView
+                    android:id="@+id/reel_left"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/reel"
+                    android:contentDescription="Left reel" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/status_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stopped"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/gx_text" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/reel_right"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/reel"
+                    android:contentDescription="Right reel" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Tape counter / VU meters -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/gx_panel"
+            android:padding="12dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="12dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TAPE COUNTER"
+                    android:textColor="@color/gx_muted"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/tape_counter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0080"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:textColor="@color/gx_gold" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_counter_reset"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/btn_gx"
+                android:backgroundTint="@null"
+                android:text="↻"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@color/gx_text"
+                android:layout_marginStart="8dp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="● REC"
+                    android:textColor="@color/gx_red"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SIDE A ↻"
+                    android:textColor="@color/gx_gold"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/vu_left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="L VU ▂▃▅"
+                    android:textColor="@color/gx_green"
+                    android:textSize="12sp"
+                    android:fontFamily="monospace" />
+
+                <TextView
+                    android:id="@+id/vu_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="R VU ▂▃▅"
+                    android:textColor="@color/gx_green"
+                    android:textSize="12sp"
+                    android:fontFamily="monospace" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- GX-880 transport: REW / F.FWD / STOP-EJ / PLAY / PAUSE / REC -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/gx_panel"
+            android:padding="12dp"
+            android:layout_marginTop="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_rew"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="◀◀ REW"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text" />
+
+                <Button
+                    android:id="@+id/btn_ff"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="F.FWD ▶▶"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text" />
+
+                <Button
+                    android:id="@+id/btn_stop"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="STOP/EJ"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text" />
+
+                <Button
+                    android:id="@+id/btn_play"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_gx_accent"
+                    android:backgroundTint="@null"
+                    android:text="▶ PLAY"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/cassette_dark" />
+
+                <Button
+                    android:id="@+id/btn_pause"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="❚❚ PAUSE"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text" />
+
+                <Button
+                    android:id="@+id/btn_rec"
+                    android:layout_width="0dp"
+                    android:layout_height="56dp"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="● REC"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="6dp">
+
+                <Button
+                    android:id="@+id/btn_prev"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="⏮ PREV"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text" />
+
+                <Button
+                    android:id="@+id/btn_eject"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="⏏ EJECT"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text" />
+
+                <Button
+                    android:id="@+id/btn_next"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="NEXT ⏭"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Volume  "
+                    android:textColor="@color/gx_text" />
+
+                <SeekBar
+                    android:id="@+id/volume_seek"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="15" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- FM STEREO / AM tuner + readout + presets -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/gx_panel"
+            android:padding="12dp"
+            android:layout_marginTop="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <Button
+                    android:id="@+id/btn_fm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:background="@drawable/btn_gx_accent"
+                    android:backgroundTint="@null"
+                    android:text="FM STEREO"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/cassette_dark" />
+
+                <Button
+                    android:id="@+id/btn_am"
+                    android:layout_width="wrap_content"
+                    android:layout_height="44dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="AM"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text"
+                    android:layout_marginStart="6dp" />
+
+                <TextView
+                    android:id="@+id/tuner_band"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="● STEREO"
+                    android:textColor="@color/gx_red"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:gravity="end" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="FM 88      92      96      100      104      108 MHz"
+                android:textColor="@color/gx_green"
+                android:textSize="11sp"
+                android:fontFamily="monospace"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AM 530    700    900    1100    1400    1700 kHz"
+                android:textColor="@color/gx_gold"
+                android:textSize="11sp"
+                android:fontFamily="monospace" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/gx_panel2"
+                android:padding="10dp"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/tuner_freq"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="95.1 MHz"
+                    android:textColor="@color/gx_gold"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tuner_station"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="BRIGHT-FM 95.1 FM"
+                    android:textColor="@color/gx_text"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tuner_desc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Christian radio - USA"
+                    android:textColor="@color/gx_cyan"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_stations"
+                android:layout_width="wrap_content"
+                android:layout_height="44dp"
+                android:background="@drawable/btn_gx"
+                android:backgroundTint="@null"
+                android:text="STATIONS ☰"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/gx_text"
+                android:layout_marginTop="10dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:id="@+id/btn_preset1"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="P1&#10;WGTS 91.9"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text" />
+
+                <Button
+                    android:id="@+id/btn_preset2"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="P2&#10;BRIGHT-FM"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text" />
+
+                <Button
+                    android:id="@+id/btn_preset3"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="P3&#10;K-LOVE"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text" />
+
+                <Button
+                    android:id="@+id/btn_preset4"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="P4&#10;AIR1"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text" />
+
+                <Button
+                    android:id="@+id/btn_preset5"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="P5&#10;MOODY"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text" />
+
+                <Button
+                    android:id="@+id/btn_preset6"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/btn_gx"
+                    android:backgroundTint="@null"
+                    android:text="P6&#10;FAMILY"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/gx_text" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- RADIO section -->
+        <LinearLayout
+            android:id="@+id/station_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="12dp">
+
+            <Button
+                android:id="@+id/btn_bluetooth"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/btn_gx"
+                android:backgroundTint="@null"
+                android:text="🎧 Bluetooth - Connect headphones"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/gx_text"
+                android:layout_marginBottom="10dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Choose a station"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/gx_gold"
+                android:layout_marginBottom="6dp" />
+
+            <LinearLayout
+                android:id="@+id/station_list_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </LinearLayout>
+
+        <!-- TAPES / local music section -->
+        <LinearLayout
+            android:id="@+id/music_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Music"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/gx_text"
+                android:layout_marginBottom="6dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <Button
+                    android:id="@+id/btn_pick_music"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:background="@drawable/btn_gx_accent"
+                    android:backgroundTint="@null"
+                    android:text="🎵 Pick Music"
+                    android:textStyle="bold"
+                    android:textColor="@color/cassette_dark" />
+
+                <TextView
+                    android:id="@+id/music_track"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="No music picked yet — tap Pick Music to choose audio files from your device."
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:paddingStart="8dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_shuffle"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:background="@drawable/btn_gx"
+                android:backgroundTint="@null"
+                android:text="\uD83D\uDD00 Play All Shuffle"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/gx_text"
+                android:layout_marginTop="6dp" />
+
+            <ListView
+                android:id="@+id/music_list"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_marginTop="6dp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Audio keeps playing in the background and with the screen off. Use the notification to pause, resume, or stop."
+            android:textSize="14sp"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_settings"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/btn_gx"
+            android:backgroundTint="@null"
+            android:text="\u2699 Settings"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/gx_text"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+</ScrollView>
