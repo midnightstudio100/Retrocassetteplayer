@@ -8,3 +8,6 @@ if you want this app removed contact at midnightstudio100@gmail.com thank you.
 note: does not contain viruses its safe to install on phones but you do it at your own risk. it has background play support
 
 Now: Web version is available~ you can use the web version listen in online you can also listen to your own music files
+
+
+The reason why I decided to make this my own app using Muse AI is because the google play store doesn't seem to have what I want to use
