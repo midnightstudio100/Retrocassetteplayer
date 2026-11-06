@@ -1,3 +1,0 @@
-git add path/to/image.png
-git commit -m "Add image"
-git push origin main
