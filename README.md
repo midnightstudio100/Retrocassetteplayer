@@ -17,7 +17,7 @@ features you can play your own music player mp3 files and there is radio, curren
 enjoy! welcome to the share of my app
 has no virus it's a clean app( I am currently testing this on my phone and it works fine on my phone) when you install it might tell you it's a dangerous app but that is a false alarm
 enjoy the app! I am Matthew!
-
+if you have issues with the app you can upload it under issues on GitHub thanks for trying the app!
 
 Now: Web version is available~ you can use the web version listen in online you can also listen to your own music files
 
